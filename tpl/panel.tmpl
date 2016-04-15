@@ -1,0 +1,10 @@
+<%if(data.mask){%>
+	<div class="player-mask" id="player-mask-<%=data.id%>"></div>
+<%}%>
+<div class="player-panel" id="player-panel-<%=data.id%>">
+	<h2><%=data.title%></h2>
+	<span class="player-panel-close" title="关闭"></span>
+	<div class="player-panel-content">
+		<%=data.htmlText%>
+	</div>
+</div>

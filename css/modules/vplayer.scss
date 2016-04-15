@@ -1,0 +1,247 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#videoContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.player-wrap {
+    width: 100%;
+    height: calc(100% - 100px);
+    .player-video {
+        background: #000;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+
+/**
+ * 视频模块video
+ */
+
+#hy-video {
+    position: relative;
+    background: #000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#hy-danmu {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*height: 100%;*/ //此处不能设置canvas的高度否则resize时会被拉伸
+}
+
+
+/*
+ * 右上角直播图标
+ */
+
+#player-liveicon {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    width: 72px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    i {
+        display: block;
+        position: relative;
+        top: 7px;
+        left: 8px;
+        @include circle(14px, red);
+    }
+    span {
+        position: absolute;
+        top: 2px;
+        right: 11px;
+    }
+}
+
+.player-wrap:hover #player-liveicon {
+    visibility: visible;
+}
+
+
+/*
+ * 延迟消失
+ */
+
+.delayhide {
+    visibility: hidden !important;
+    transition: visibility 0s 4s;
+}
+
+
+/**
+ * 加载画面
+ */
+
+.player-loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    font-family: "Microsoft YaHei";
+    .player-loading-logo {
+        width: 220px;
+        height: 67px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -170px 0 0 -110px;
+        background: url(../../img/huyalogo.png?__sprite) no-repeat;
+        &:after {
+            content: '正在加载';
+            position: absolute;
+            color: #fff;
+            font-size: 16px;
+            bottom: -60px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .player-loading-progress {
+        width: 228px;
+        height: 11px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -30px 0 0 -114px;
+        background: url(../../img/videoloading.gif?__inline) no-repeat;
+        border: none;
+    }
+}
+
+
+/**
+ * 全屏状态下的样式
+ */
+
+.player-container-full:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.player-container-full:-moz-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.player-container-full:full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.player-container-full:fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/**
+ * 网页全屏
+ */
+
+.player-page-full {
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    margin: 0;
+    z-index: 99999;
+}
+
+
+/**
+ * 礼物栏
+ */
+
+.player-gift-wrap {
+    height: 60px;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    bottom: 1px;
+    border-bottom: 1px solid #fafafa;
+    .ellipsis {
+        @include ellipsis;
+    }
+}
+
+.player-gift-right {
+    float: right;
+    height: 100%;
+    ul {
+        height: 100%;
+    }
+    li {
+        padding: 0 15px;
+        height: 100%;
+        float: left;
+        cursor: pointer;
+        position: relative;
+        color: #666;
+        background: url(../../img/player-gift-line.png?__inline) no-repeat top left;
+        &:hover {
+            .player-bot-line {
+                width: 100%;
+            }
+        }
+        i {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            margin-top: 13px;
+        }
+        .player-bot-line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6600;
+            transition: width .3s ease-out;
+        }
+    }
+    #player-punch-btn {
+        color: #ff630e;
+        i {
+            background: url(../../img/first-punch-icon.png?__sprite) no-repeat;
+        }
+    }
+    #player-recharge-btn {
+        color: #ff630e;
+        i {
+            background: url(../../img/recharge-icon.png?__sprite) no-repeat;
+        }
+    }
+    #player-package-btn {
+        i {
+            background: url(../../img/package-icon.png?__sprite) no-repeat;
+        }
+    }
+}

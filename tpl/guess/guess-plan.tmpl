@@ -1,0 +1,43 @@
+<div class="guess-plan">
+    <span class="guess-plan-close"></span>
+    
+    <div class="guess-plan-l">
+        <div class="guess-plan-l-line">
+            <span class="guess-plan-bean">我的豆子：银豆1250</span>
+            <span class="guess-plan-charge">充值</span>
+            <i class="guess-plan-help" title="tips"></i>
+        </div>
+        
+        <div class="guess-plan-l-line">
+            <input class="guess-plan-input" maxlength="6" type="text"></input>
+            <span class="guess-plan-confirm">确定</span>
+            <span class="guess-plan-all">全压</span>
+        </div>
+        
+        <div class="guess-plan-l-line">
+            <span class="guess-plan-win">赢则赢0</span>
+            <span class="guess-plan-lease">剩余种豆：1000000</span>
+        </div>
+    </div>
+    
+    <div class="guess-plan-r">
+        <p>全屏请使用软键盘输入</p>
+        <div class="guess-plan-keybord">
+                <%
+                var rows = [["1","2","3"],["4","5","6"],["7","8","9"],["万","0","退格"]];
+                var len = rows.length;
+                for(var i = 0;i < len;i ++){
+                    var columns = rows[i];
+                 %>
+                    <div>
+                        <%
+                        for(var j = 0;j < columns.length;j ++)
+                        {
+                        %>
+                            <span class="guess-plan-num"><%=columns[j]%></span>
+                        <%}%>
+                    </div>
+                <%}%>
+        </div>
+    </div>
+</div>

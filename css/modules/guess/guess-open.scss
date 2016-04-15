@@ -1,0 +1,145 @@
+//我要开猜
+.guess-open{
+    @extend .guess-panel;
+    width: 530px;
+    height: 440px;
+    .guess-open-title{
+        @extend .guess-panel-title;
+        height: 50px;
+    }
+    .guess-open-word{
+        @extend .guess-panel-word;
+        line-height: 50px;
+    }
+    .guess-open-close{
+        @extend .guess-panel-close;
+        top: 5px;
+    }
+    
+    .guess-open-line{
+        position: relative;
+        width: 100%;
+        height: 30px;
+        margin-top: 10px;
+        padding-left: 20px;
+        span{
+            height: 30px;
+            line-height: 30px;
+            color: #CCCCCC;
+        }
+        .guess-open-pre{
+            @extend .guess-com-word-pre;
+            width: 100px;
+        }
+        .guess-open-white{
+            color: white;
+        }
+        .guess-open-radio{
+            @extend .guess-com-radio;
+            .guess-open-gold{
+                color: #FF8B00;
+            }
+        }
+        .guess-open-bean{
+            position: relative;
+            float: left;
+            text-align: left;
+            width: 40px;
+        }
+        
+        .guess-open-input{
+            @extend .guess-com-input;
+            width: 90px;
+            height: 26px;
+        }
+        
+        .guess-open-confirm{
+            @extend .guess-com-btn-orange;
+            position: absolute;
+            left: 120px;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+        }
+        .guess-open-charge{
+            @extend .guess-com-btn-orange;
+            float: left;
+            left: 40px;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+    
+    .guess-open-fast-input{
+        width: 291px;
+        height: 148px;
+        display: none;
+        position: absolute;
+        background: #404040;
+        .guess-open-fast-close{
+            position: relative;
+            float: right;
+            right: 2px;
+            top: 2px;
+            color: white;
+            cursor: pointer;
+            &:hover{
+                color: red;
+            }
+        }
+        .guess-open-fast-btn{
+            position: relative;
+            float: left;
+            margin: 4px 2.5px;
+            width: 35px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            background: #333333;
+            color: #CCCCCC;
+            border-radius: 2px;
+            cursor: pointer;
+            &:hover{
+                background: #666666;
+            }
+            &:active{
+                background: #333333;
+            }
+        }
+        .guess-open-fast-box{
+            position: absolute;
+            width: 145px;
+            height: 148px;
+            .guess-open-fast-t{
+                position: relative;
+                left: 10px;
+                top: 18px;
+            }
+            .guess-open-fast-keyboard{
+                position: relative;
+                left: 10px;
+                top: 23px;
+            }
+        }
+        .guess-open-fast-l{
+            @extend .guess-open-fast-box;
+            span{
+                color: #CCCCCC;
+            }
+            .guess-open-fast-ctrl{
+                @extend .guess-open-fast-btn;
+                width: 80px;
+            }
+        }
+        .guess-open-fast-r{
+            @extend .guess-open-fast-box;
+            top: 0;
+            left: 145px;
+            border-left: 1px solid #333333;
+            span{
+                color: #999999;
+            }
+        }
+    }
+}

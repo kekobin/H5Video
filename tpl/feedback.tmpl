@@ -1,0 +1,26 @@
+<p>请选择直播中出现的问题</p>
+
+<p class="feedback-dropList" index='9'>其它</p>
+<ul>
+<%
+	var list = [
+		"画面卡顿","缓冲不到视频","花屏","黑屏",
+		"声音和画面不同步","有画面没声音",
+		"发送不了道具","有声音没视频","其它"
+	];
+	for(var i=0,len=list.length; i<len; i++){
+		var text = list[i];
+%>
+	<li index='<%=(i+1)%>'><%=text%></li>
+<%	}%>
+</ul>
+<p>麻烦您描述直播出现的问题</p>
+
+<textarea wrap="virtual" spellcheck="false"></textarea>
+
+<button id="feedback-submit">反馈</button>
+<button id="feedback-cancel">取消</button>
+
+<p id="feedback-tip">正在提交...</p>
+
+<p id="feedback-footer">更多反馈请加入QQ群：58254521&nbsp;<span></span></p>

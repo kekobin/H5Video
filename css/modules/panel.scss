@@ -1,0 +1,89 @@
+/**
+ * 公用弹层样式
+ */
+
+.player-mask {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+
+.player-panel {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 50%;
+    top: 50%;
+    background: #333;
+    border: 1px solid #444;
+    h2 {
+        cursor: move;
+        height: 40px;
+        line-height: 40px;
+        background: #191919;
+        color: #999;
+        font-size: 16px;
+        font-weight: 800;
+        padding-left: 10px;
+    }
+    .player-panel-close {
+        width: 19px;
+        height: 19px;
+        background: url(../../img/close-icon.png?__sprite) no-repeat;
+        position: absolute;
+        top: 10px;
+        right: 18px;
+        cursor: pointer;
+        transition: transform .3s ease;
+        &:hover {
+            transform: rotate(180deg)
+        }
+    }
+}
+
+
+/**
+ * Alert样式
+ */
+
+#player-panel-alert {
+    width: 350px;
+    height: 200px;
+    .player-panel-content {
+        overflow: hidden;
+        width: 180px;
+        height: 120px;
+        line-height: 1.5;
+        position: absolute;
+        left: 95px;
+        top: 77px;
+        color: #ccc;
+        font-size: 16px;
+        /*text-align: center;*/
+        word-wrap: break-word;
+    }
+    i {
+        position: absolute;
+        display: block;
+        left: 70px;
+        top: 80px;
+        width: 22px;
+        height: 22px;
+    }
+    .alert-icon-err {
+        background: url(../../img/alert_icon_1.png?__sprite) no-repeat;
+    }
+    .alert-icon-tip {
+        background: url(../../img/alert_icon_2.png?__sprite) no-repeat;
+    }
+    .alert-icon-info {
+        background: url(../../img/alert_icon_3.png?__sprite) no-repeat;
+    }
+}

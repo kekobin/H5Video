@@ -1,0 +1,483 @@
+/**
+ * 播放器的控制条
+ */
+
+//视频旋转按钮
+#player-rotate {
+    display: none;
+    position: absolute;
+    margin: 0;
+    top: -540px;
+    right: 40px;
+    width: 35px;
+    height: 35px;
+    opacity: 0.6;
+    cursor: pointer;
+    background: url(../../img/player-rotate.jpg?__sprite) no-repeat;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+//全屏控制栏感应区域
+#player-ctrl-full-area {
+    display: none;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    position: absolute;
+}
+
+//全屏时控制栏增加的样式
+.player-ctrl-full {
+    position: absolute !important;
+    bottom: 0 !important;
+    background: rgba(34, 34, 34, 0.7) !important;
+}
+
+.player-ctrl-full:hover .player-ctrl-wrap {
+    visibility: visible;
+}
+
+
+/*
+ * 控制栏
+ */
+
+.player-ctrl-wrap {
+    width: 100%;
+    height: 40px;
+    background: #222;
+    position: relative;
+    //暂停视频
+    .player-pause-btn {
+        float: left;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background: url(../../img/pause.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/pause-hover.png?__sprite) no-repeat;
+        }
+    }
+    //播放视频
+    .player-play-btn {
+        float: left;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background: url(../../img/play.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/play-hover.png?__sprite) no-repeat;
+        }
+    }
+    .player-ctrl-btn {
+        float: right;
+        margin: 12px 12px 0 0;
+        &>div, &>span {
+            margin-left: 20px;
+            cursor: pointer;
+            float: left;
+        }
+    }
+    //礼物竞猜
+    .gift-show-btn {
+        width: 68px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        float: left;
+        color: #9a9a9a;
+        border: 1px solid #A2A2A2;
+        border-radius: 20px;
+        cursor: pointer;
+        display: none;
+        &:hover {
+            border: 1px solid #ff630e;
+            color: #ff630e;
+        }
+    }
+    //弹幕
+    .danmu-btn {
+        width: 56px;
+        height: 18px;
+        float: left;
+        border-radius: 20px;
+    }
+    .danmu-btn-quan {
+        width: 18px;
+        height: 18px;
+        border-radius: 20px;
+    }
+    .danmu-show-btn {
+        border: 1px solid #ff630e;
+        background: #ff630e;
+        .danmu-btn-quan {
+            background: #f3f3f3;
+            float: right;
+        }
+        .danmu-btn-txt {
+            color: #2e3235;
+            float: left;
+            width: 33px;
+            text-align: right;
+        }
+    }
+    .danmu-hide-btn {
+        border: 1px solid #494949;
+        background: transparent;
+        .danmu-btn-quan {
+            background: #666666;
+            float: left;
+        }
+        .danmu-btn-txt {
+            color: #9a9a9a;
+            float: left;
+            width: 35px;
+            text-align: center;
+        }
+    }
+    //画质选择(多码率)
+    .player-videotype {
+        width: 46px;
+        height: 18px;
+        float: left;
+        text-align: center;
+        position: relative;
+        i {
+            /*填充缝隙,保证从cur移到list的过程中不会触发mouseOut*/
+            position: absolute;
+            display: block;
+            bottom: 18px;
+            width: 100%;
+            height: 10px;
+        }
+        .player-videotype-cur {
+            border-radius: 20px;
+            border: 1px solid #904218;
+            color: #ff620e;
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        /*&:hover .player-videotype-list {
+			display: block;
+		}*/
+        .player-videotype-list {
+            z-index: 1;
+            position: absolute;
+            left: -6px;
+            bottom: 28px;
+            width: 56px;
+            padding: 0 2px;
+            background: rgba(34, 34, 34, .8);
+            color: #999999;
+            display: none;
+            &:after {
+                content: '';
+                display: block;
+                /*这个也很关键的*/
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                bottom: -16px;
+                left: 20px;
+                border: 8px solid transparent;
+                border-top: 8px solid #282629;
+                /*此颜色根据页面背景色一直。不能为透明色transparent*/
+                z-index: 1;
+            }
+            li {
+                height: 27px;
+                line-height: 27px;
+                border-bottom: 2px solid rgba(34, 34, 34, .8);
+                &:last-child {
+                    border-bottom: none;
+                }
+                &.on, &:hover {
+                    color: #ff620e;
+                }
+            }
+        }
+    }
+    //问题反馈
+    .player-report-btn {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(../../img/report.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/report-hover.png?__sprite) no-repeat;
+        }
+    }
+    //弹幕设置
+    .player-danmu-setting {
+        display: block;
+        width: 20px;
+        height: 20px;
+        .player-danmu-setting-btn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url(../../img/set.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/set-hover.png?__sprite) no-repeat;
+            }
+        }
+        .player-danmu-setting-light {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url(../../img/set-hover.png?__sprite) no-repeat;
+        }
+        .player-danmu-pane {
+            display: none;
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            bottom: 45px;
+            right: 40px;
+            width: 210px;
+            height: 160px;
+            cursor: auto;
+            font-family: Sunsim;
+            font-size: 12px;
+            color: #A2A2A2;
+            .danmu-setting-close {
+                display: block;
+                position: absolute;
+                float: right;
+                top: 5px;
+                right: 5px;
+                width: 12px;
+                height: 11px;
+                cursor: pointer;
+                background: url(../../img/danmusetclose.png?__sprite) no-repeat;
+                &:hover {
+                    background: url(../../img/danmusetclose-hover.png?__sprite) no-repeat;
+                }
+            }
+            p {
+                position: absolute;
+                left: 15px;
+            }
+            p:nth-of-type(1) {
+                top: 6px;
+            }
+            p:nth-of-type(2) {
+                top: 30px;
+            }
+            p:nth-of-type(3) {
+                top: 80px;
+            }
+            a {
+                position: absolute;
+                display: block;
+                width: 48px;
+                height: 25px;
+                top: 105px;
+            }
+            a:nth-of-type(1) {
+                left: 15px;
+                background: url(../../img/danmutype1.png?__sprite) no-repeat;
+            }
+            a:nth-of-type(2) {
+                left: 80px;
+                background: url(../../img/danmutype2.png?__sprite) no-repeat;
+            }
+            a:nth-of-type(3) {
+                left: 145px;
+                background: url(../../img/danmutype3.png?__sprite) no-repeat;
+            }
+            li {
+                position: relative;
+                cursor: pointer;
+                margin-right: 17px;
+                padding-left: 15px;
+                width: 33px;
+                list-style: none;
+                float: left;
+                span, i {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                }
+                span {
+                    background: url(../../img/radiobtn.png?__sprite) no-repeat;
+                }
+                i {
+                    display: none;
+                    background: url(../../img/radiobtn-select.png?__sprite) no-repeat;
+                }
+            }
+            .danmu-setting-alpha {
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: 15px;
+            }
+            .danmu-setting-area {
+                display: block;
+                position: absolute;
+                top: 135px;
+                left: 15px;
+            }
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                bottom: -12px;
+                left: 103px;
+                border: 6px solid transparent;
+                border-top: 6px solid rgba(0, 0, 0, 0.8);
+            }
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                bottom: -9px;
+                left: 104px;
+                border: 5px solid transparent;
+                border-top: 5px solid rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+    //音量控制 
+    .player-volume {
+        position: relative;
+        width: 20px;
+        .player-volume-btn {
+            width: 20px;
+            height: 18px;
+            display: block;
+            background: url(../../img/volume.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/volume-hover.png?__sprite) no-repeat;
+            }
+        }
+        .player-volume-stop-btn {
+            width: 20px;
+            height: 18px;
+            display: block;
+            background: url(../../img/mute.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/mute-hover.png?__sprite) no-repeat;
+            }
+        }
+        &:hover {
+            .sound-progress {
+                visibility: visible;
+            }
+        }
+        .sound-progress {
+            width: 42px;
+            height: 117px;
+            position: absolute;
+            left: -12px;
+            bottom: 12px;
+            cursor: default;
+            visibility: hidden;
+            background: url(../../img/volume-bg.png?__sprite) no-repeat;
+            .sound-setting {
+                width: 2px;
+                height: 88px;
+                position: absolute;
+                left: 18px;
+                top: 7px;
+                .sound-setting-bar {
+                    background: #ff630e;
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+                .sound-setting-btn {
+                    cursor: pointer;
+                    background: #afafaf;
+                    width: 12px;
+                    height: 12px;
+                    position: absolute;
+                    left: -5px;
+                    margin-top: -6px;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+    //网页全屏按钮
+    .player-fullpage-btn {
+        width: 20px;
+        height: 18px;
+        background: url(../../img/fullpage.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/fullpage-hover.png?__sprite) no-repeat;
+        }
+    }
+    .player-narrowpage {
+        width: 20px;
+        height: 18px;
+        background: url(../../img/narrowpage.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/narrowpage-hover.png?__sprite) no-repeat;
+        }
+    }
+    //全屏按钮
+    .player-fullscreen-btn {
+        width: 18px;
+        height: 16px;
+        background: url(../../img/fullscreen.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/fullscreen-hover.png?__sprite) no-repeat;
+        }
+    }
+    .player-narrowscreen {
+        width: 18px;
+        height: 16px;
+        background: url(../../img/narrowscreen.png?__sprite) no-repeat;
+        &:hover {
+            background: url(../../img/narrowscreen-hover.png?__sprite) no-repeat;
+        }
+    }
+    //发言样式
+    .player-full-input {
+        width: 570px;
+        height: 24px;
+        line-height: 24px;
+        position: absolute;
+        top: 50%;
+        margin: -10px 0 0 0;
+        display: none;
+        .player-full-input-txt {
+            width: 490px;
+            padding: 0 5px;
+            height: 24px;
+            border: 0;
+            float: left;
+            background: #666;
+            outline: none;
+            color: #fff;
+            border-radius: 3px 0 0 3px;
+        }
+        .player-full-input-btn {
+            width: 70px;
+            height: 24px;
+            text-align: center;
+            float: left;
+            border-radius: 0 3px 3px 0;
+            color: #ffaa00;
+            background: #383838;
+            cursor: pointer;
+            &:hover {
+                background: #4f4d4d;
+            }
+        }
+    }
+}

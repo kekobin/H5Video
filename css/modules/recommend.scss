@@ -1,0 +1,138 @@
+#player-recommend {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    font-size: 16px;
+    font-family: SimSun;
+    color: #999999;
+    .player-recommend-container {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        /*
+        width: fit-content;
+        height: fit-content;
+        */
+        /*
+        width: calc(100% - 200px);
+        height: calc(100% - 300px);
+        */
+        .player-recommend-title {
+            padding-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .player-recommend-list {
+            width: 100%;
+            height: calc(100% - 48px);
+            overflow: hidden;
+            ul {
+                width: 100%;
+                height: 100%;
+                li {
+                    position: relative;
+                    display: block;
+                    float: left;
+                    width: 238px;
+                    height: 196px;
+                    margin: 10px;
+                    background: #1F1F1F;
+                    font-size: 12px;
+                    .player-recommend-vbox {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 8px;
+                        left: 8px;
+                        width: 223px;
+                        height: 127px;
+                        &:hover {
+                            .player-recommend-mask {
+                                display: block;
+                            }
+                        }
+                        .player-recommend-video {
+                            width: 223px;
+                            height: 127px;
+                            display: block;
+                            position: absolute;
+                        }
+                        .player-recommend-mask {
+                            display: none;
+                            position: absolute;
+                            width: 223px;
+                            height: 127px;
+                            background: transparent;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            i {
+                                display: block;
+                                position: absolute;
+                                left: 91px;
+                                top: 44px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 40px;
+                                border: 2px solid #fff;
+                            }
+                            span {
+                                position: absolute;
+                                left: 108px;
+                                top: 56px;
+                                border-radius: 2px;
+                                border-width: 10px 16px;
+                                border-style: solid;
+                                border-color: transparent transparent transparent #fff;
+                            }
+                        }
+                    }
+                    .player-recommend-head {
+                        display: block;
+                        position: absolute;
+                        cursor: pointer;
+                        left: 8px;
+                        top: 80px;
+                        width: 55px;
+                        height: 55px;
+                    }
+                    .player-recommend-name {
+                        position: absolute;
+                        top: 142px;
+                        left: 10px;
+                        width: 223px;
+                        cursor: pointer;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .player-recommend-viewers {
+                        position: absolute;
+                        top: 165px;
+                        left: 10px;
+                        padding-left: 20px;
+                        width: calc(100% - 40px);
+                        color: #666666;
+                        i {
+                            display: block;
+                            position: absolute;
+                            left: -2px;
+                            top: -2px;
+                            width: 18px;
+                            height: 20px;
+                            background: url(../../img/icon.jpg?__sprite) no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+        .player-recommend-all {
+            float: right;
+            cursor: pointer;
+            color: #FF8A00;
+            padding-right: 10px;
+        }
+    }
+}

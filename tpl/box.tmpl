@@ -1,0 +1,20 @@
+<div class="player-box" id="player-box">
+	<p class="player-box-title">
+		<span></span>
+	</p>
+	<div class="player-box-list">
+	<ul>
+	<%
+		for(var i=1; i<=6; i++){
+	%>
+		<li>
+			<i></i>
+			<p class="player-box-stat1"></p>
+			<p class="player-box-stat2"></p>
+			<p class="player-box-stat3" index='<%=i%>'></p>
+			<p class="player-box-stat4"></p>
+		</li>
+	<%	}%>
+	</ul>
+	</div>
+</div>

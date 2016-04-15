@@ -1,0 +1,266 @@
+/**
+ * 礼物栏
+ */
+.player-face {
+	float: right;
+	height: 100%;
+    position: relative;
+	ul {
+		height: 100%;
+	}
+	li {
+		width: 50px;
+		height: 100%;
+		float: left;
+		cursor: pointer;
+		position: relative;
+		background: url(../../img/player-gift-line.png?__inline) no-repeat top left;
+		&:hover {
+			.player-bot-line {
+				width: 100%;
+			}
+		}
+		img {
+			margin-top: 16px;
+		}
+		.player-bot-line {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 0;
+			height: 2px;
+			background: #ff6600;
+			transition: width .3s ease-out;
+		}
+	}
+	.player-face-pre{
+		top:1px;
+		left: 0;
+		width: 20px;
+		height: 58px;
+		position: relative;
+		float: left;
+		cursor: pointer;
+		background: url(../../img/arrow-l.png?__inline) no-repeat 3px 18px;
+		&:hover{
+			background: url(../../img/arrow-l-hover.png?__inline) no-repeat 3px 18px #FF630E;
+		}
+	}
+	.player-face-next{
+		top: 1px;
+		right: 0;
+		width: 20px;
+		height: 58px;
+		position: relative;
+		float: left;
+		cursor: pointer;
+		background: url(../../img/arrow-r.png?__inline) no-repeat 3px 18px;
+		&:hover{
+			background: url(../../img/arrow-r-hover.png?__inline) no-repeat 3px 18px #FF630E;
+		}
+	}
+	.player-face-list{
+		float: left; /*与前后箭头同行*/
+		height: 100%;
+		/*遮罩层*/
+		overflow:hidden;
+		position: relative;
+		ul{ /*滚动层*/
+			position: absolute;
+		}
+	}
+	.player-face-tip {
+		width: 323px;
+	    height: 155px;
+	    position: absolute;
+	    overflow: hidden;
+	    border: 1px solid #d9d9d9;
+	    background: #ffffff;
+	    border-radius: 2px;
+	    bottom: 55px;
+	    right: 25px;
+	    display: none;
+	    cursor: default;
+	    box-shadow: 0px 0px 4px #e9e9e9;
+	    .player-face-tip-img {
+	    	float: left;
+	    	width: 58px;
+	    	img {
+	    		margin-top: 23px;
+	    	}
+	    }
+	    .player-face-tip-txt {
+			float: left;
+	    	width: 235px;
+	    	text-align: left;
+	    	color: #454545;
+	    	h3 {
+	    		height: 35px;
+	    		line-height: 35px;
+	    		border-bottom: 1px solid #eee;
+	    		span {
+	    			color: #ff630e;
+	    		}
+	    	}
+	    	p {
+	    		line-height: 20px;
+	    		padding-top: 5px;
+	    		span {
+	    			color: #ff630e;
+	    		}
+	    	}
+	    	.player-face-tip-gap {
+	    		height: 45px;
+	    	}
+	    }
+	}
+	.player-face-layer {
+		display: none;
+		width: 228px;
+		height: 203px;
+		border: 1px solid #d9d9d9;
+		padding: 0 10px;
+		background: #fff;
+		position: absolute;
+		bottom: 55px;
+    	left: -100px;
+    	cursor: default;
+    	box-shadow: 0px 0px 4px #e9e9e9;
+    	border-radius: 2px;
+    	text-align: left;
+    	&:before {
+			content: '';
+		    display: block;
+		    position: absolute;
+		    width: 0px;
+		    height: 0px;
+		    bottom: -13px;
+		    left: 115px;
+		    border: 6px solid transparent;
+		    border-top: 6px solid #d9d9d9;
+		}
+    	&:after {
+    		content: '';
+		    display: block;
+		    position: absolute;
+		    width: 0px;
+		    height: 0px;
+		    bottom: -10px;
+		    left: 116px;
+		    border: 5px solid transparent;
+		    border-top: 5px solid #fff;
+		}
+    	.player-face-close {
+    		width: 13px;
+    		height: 12px;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			cursor: pointer;
+			background: url(../../img/gift-close.png?__sprite) no-repeat;
+			&:hover {
+				background: url(../../img/gift-close-hover.png?__sprite) no-repeat;
+			}
+    	}
+    	h3 {
+			color: #333;
+			height: 32px;
+			line-height: 32px;
+		}
+		.player-face-give {
+			height: 32px;
+			margin-bottom: 8px;
+		}
+		.player-face-give-img {
+			width: 30px;
+			height: 30px;
+			float: left;
+			border: 1px solid #ededed;
+			text-align: center;
+			margin-right: 5px;
+			border-radius: 2px;
+		}
+		.player-face-give-input {
+			border: 1px solid #bbb;
+			border-right: none;
+			border-radius: 2px 0 0 2px;
+			width: 125px;
+			padding-left: 3px;
+			height: 30px;
+			line-height: 30px;
+			float: left;
+			&:focus {
+				outline: none;
+			}
+		}
+		.player-face-give-btn {
+			float: left;
+			width: 60px;
+			background: #ff8a00;
+			border-radius: 0 2px 2px 0;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+			line-height: 32px;
+			height: 32px;
+			&:hover {
+				background: #ff630e;
+			}
+		}
+		.player-face-sel {
+			margin-right: -8px;
+			height: auto;
+			overflow: hidden;
+			zoom:1;
+			li {
+				width: 70px;
+				height: 40px;
+				border-radius: 2px;
+				background: #f5f5f4;
+				color: #999999;
+				float: left;
+				margin: 0 8px 8px 0;
+				text-align: center;
+				&:hover {
+					background: #ff630e;
+					color: #fff;
+				}
+				strong {
+					font-weight: 800;
+					font-size: 14px;
+				}
+			}
+		}
+		.player-face-foot {
+			color: #999;
+			padding-top: 5px;
+			i {
+				width: 16px;
+				height: 15px;
+				display: inline-block;
+				vertical-align: -3px;
+				margin-right: 3px;
+			}
+			.player-face-bean-gold{
+				background: url(../../img/gold-icon.png?__sprite) no-repeat;
+			}
+			.player-face-bean-silver{
+				background: url(../../img/silver-b-icon.png?__sprite) no-repeat;
+			}
+		}
+		.player-face-set {
+			width: 15px;
+			height: 15px;
+			cursor: pointer;
+			position: absolute;
+			right: 10px;
+			bottom: 15px;
+			background: url(../../img/set-icon.png?__sprite) no-repeat;
+			&:hover {
+				background: url(../../img/set-icon-hover.png?__sprite) no-repeat;
+			}
+		}
+	}
+}
+
+

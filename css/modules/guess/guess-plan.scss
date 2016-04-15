@@ -1,0 +1,128 @@
+//种豆
+.guess-plan{
+    font-size: 13px;
+    display: none;
+    position: fixed;
+    width: 380px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid #888888;
+    border-radius: 2px;
+    .guess-plan-close{
+        position: relative;
+        float: right;
+        width: 25px;
+        height: 24px;
+        cursor: pointer;
+        background: url("../../../img/player-dice-close.png?__sprite") no-repeat;
+        &:hover{
+            background: url("../../../img/player-dice-close-hover.png?__sprite") no-repeat;
+        }
+    }
+}
+
+.guess-plan-l{
+    position: relative;
+    float: left;
+    left: 10px;
+    top: 10px;
+    .guess-plan-l-line{
+        width: 200px;
+        height: 20px;
+        margin-top: 20px;
+        &:first-child{
+            margin-top: 0;
+        }
+        
+        .guess-plan-bean{
+            position: absolute;
+            left: 0;
+        }
+        .guess-plan-charge{
+            position: absolute;
+            right: 30px;
+            color: #ff9900;
+            cursor: pointer;
+            &:hover{
+                color: #ff6c45;
+            }
+        }
+        .guess-plan-help{
+            position: absolute;
+            top: 3px;
+            right: 14px;
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            background: url(../../../img/wen-icon.png?__sprite) no-repeat;
+        }
+        .guess-plan-input{
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 28px;
+        }
+        .guess-plan-confirm{
+            position: absolute;
+            left: 105px;
+            width: 60px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 2px;
+            color: white;
+            background-color: #ff9900;
+            cursor: pointer;
+            &:hover{
+                background-color: #ff6c45;
+            }
+        }
+        .guess-plan-all{
+            position: absolute;
+            left: 170px;
+            height: 32px;
+            line-height: 32px;
+            color: black;
+            cursor: pointer;
+            &:hover{
+                color: #ff9900;
+            }
+        }
+        .guess-plan-win{
+            position: absolute;
+            left: 0px;
+        }
+        .guess-plan-lease{
+            position: relative;
+            float: right;
+            text-align: right;
+            color: #888888;
+        }
+    }
+}
+
+.guess-plan-r{
+    position: relative;
+    float: right;
+    top: 10px;
+    .guess-plan-keybord{
+        .guess-plan-num{
+            margin: 5px;
+            position: relative;
+            float: left;
+            width: 34px;
+            height: 18px;
+            line-height: 18px;
+            background: #F5F5F4;
+            color: #666666;
+            cursor: pointer;
+            border-radius: 2px;
+            &:hover{
+                color: white;
+                background: #FF630E;
+            }
+            &:active{
+                background: #F5F5F4;
+            }
+        }
+    }
+}

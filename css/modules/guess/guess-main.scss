@@ -1,0 +1,273 @@
+.guess-icon{
+    float: left;
+    margin: 10px 0 0 12px;
+    cursor: pointer;
+    i{
+        float: left;
+        width: 40px;
+        height: 39px;
+        background: url(../../../img/dice-icon.png?__sprite) no-repeat;
+    }
+    .guess-icon-word{
+        float: left;
+        padding-left: 8px;
+        line-height: 20px;
+        color: #666;
+    }
+}
+.guess-icon-silver{
+    background: url(../../../img/silver-b-icon.png?__sprite) no-repeat;
+}
+.guess-icon-gold{
+    background: url(../../../img/gold-b-icon.png?__sprite) no-repeat;
+}
+//竞猜面板
+.guess-main{
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+    background: rgba(255, 255, 255, 0.9);
+    
+    .guess-main-close{
+        position: relative;
+        float: right;
+        width: 25px;
+        height: 24px;
+        cursor: pointer;
+        background: url("../../../img/player-dice-close.png?__sprite") no-repeat;
+        &:hover{
+            background: url("../../../img/player-dice-close-hover.png?__sprite") no-repeat;
+        }
+    }
+}
+//当前竞猜
+.guess-main-current{
+    position: relative;
+    float: left;
+    width: 1000px;
+    height: 100%;
+    background-color: 0xFFCCDD;
+    .guess-main-title{
+        position: absolute;
+        left: 40px;
+        .game-main-title-pre{
+            background: #ff630e;
+            color: #ffffff;
+            font-weight: normal;
+            font-size: 14px;
+            padding: 2px 5px;
+            border-radius: 2px;
+            margin-right: 2px;
+        }
+        .game-main-title-name{
+            height: 34px;
+            line-height: 34px;
+            color: #333333;
+            font-weight: 800;
+            font-size: 16px;
+        }
+    }
+    .guess-main-arrow{
+        position: relative;
+        width: 100%;
+        height: 24px;
+        text-align: center;
+        top: calc((100% - 24px) * 0.5);
+        i{
+            width: 14px;
+            height: 24px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .guess-main-arrow-l{
+            float: left;
+            background: url(../../../img/arrow-l.png?__sprite) no-repeat;
+            &:hover{
+                background: url(../../../img/arrow-l-hover.png?__sprite) no-repeat;
+            }
+        }
+        .guess-main-arrow-r{
+            float: right;
+            background: url(../../../img/arrow-r.png?__sprite) no-repeat;
+            &:hover{
+                background: url(../../../img/arrow-r-hover.png?__sprite) no-repeat;
+            }
+        }
+    }
+    .guess-main-box{
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        height: calc(100% - 40px);
+        
+        .guess-main-type{
+            position: relative;
+            float: left;
+            top: 30px;
+            p{
+                margin-bottom: 12px;
+                width: 80px;
+                text-align: right;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+        
+        .guess-main-frame{
+            position: relative;
+            float: left;
+            top: 0;
+            margin-left: 20px;
+            width: 330px;
+            height: 90px;
+            border: 1px solid black;
+            
+            .guess-main-frame-title{
+                .guess-main-start{
+                    position: absolute;
+                    right: 30px;
+                    top: 5px;
+                    cursor: pointer;
+                    &:hover{
+                        color: #ff6c45;
+                    }
+                }
+                .guess-type{
+                    position: absolute;
+                    left: 5px;
+                    i{
+                        position: relative;
+                        float: left;
+                        top: 2px;
+                        width: 18px;
+                        height: 19px;
+                    }
+                    .silver-icon{
+                        background: url(../../../img/silver-b-icon.png?__sprite) no-repeat;
+                    }
+                    .gold-icon{
+                        background: url(../../../img/gold-b-icon.png?__sprite) no-repeat;
+                    }
+                    span{
+                        position: relative;
+                        float: left;
+                        font-size: 14px;
+                    }
+                }
+            }
+            
+            .guess-main-list{
+                position: relative;
+                float: left;
+                top: 28px;
+                .guess-main-li{
+                    height: 24px;
+                    margin-bottom: 8px;
+                    .guess-main-process{
+                        position: relative;
+                        float: left;
+                        left: 5px;
+                        width: 195px;
+                        height: 24px;
+                        background: #666666;
+                        .guess-main-process-red{
+                            width: 50%;
+                            background: #ff6c45;
+                        }
+                        .guess-main-process-blue{
+                            width: 40%;
+                            background: #3caaff;
+                        }
+                        i{
+                            float: left;
+                            height: 100%;
+                        }
+                        span{
+                            line-height: 20px;
+                            color: white;
+                            padding-left: 5px;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                    .guess-main-rate{
+                        float: left;
+                        width: 60px;
+                        padding: 2px 0 0 5px;
+                        font-size: 14px;
+                    }
+                    .guess-main-plan{
+                        float: right;
+                        width: 50px;
+                        color: white;
+                        height: 24px;
+                        line-height: 24px;
+                        text-align: center;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        background-color: #ff8a00;
+                        &:hover{
+                            background-color: #ff630e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//竞猜结果
+.guess-main-result{
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 100%;
+    border-left: 1px solid #000;
+    padding-left: 20px;
+    margin-left: 10px;
+    text-align: left;
+    span{
+        border-left: 4px solid #ff8a00;
+        font-size: 16px;
+        padding-left: 4px;
+    }
+    ul{
+        margin-top: 15px;
+    }
+    li{
+        line-height: 35px;
+        font-size: 14px;
+    }
+}
+//其它操作
+.guess-main-other{
+    position: relative;
+    float: right;
+    width: 84px;
+    height: 100%;
+    border-left: 1px solid #dddddd;
+    li{
+        width: 24px;
+        cursor: pointer;
+        margin: 15px auto;
+        &:hover {
+            color: #ff8a00;
+        }
+        i{
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+    }
+    .guess-main-mine{
+        background: url(../../../img/me-icon.png?__sprite) no-repeat;
+    }
+    .guess-main-help{
+        background: url(../../../img/question-icon.png?__sprite) no-repeat;
+    }
+}

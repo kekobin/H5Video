@@ -1,0 +1,38 @@
+<div class="player-recommend" id="player-recommend">
+	<div class="player-recommend-container">
+		<p class="player-recommend-title">
+			主播暂时没有直播，来这些直播间逛一逛吧！
+		</p>
+		<div class="player-recommend-list">
+			<ul>
+				<%
+					var len = Math.min(8, liveList.length);
+					for(var i=0; i<8; i++){
+						var data = liveList[i];
+						if(!data) continue;
+				%>
+					<li yyid='<%=data.yyid%>'>
+						<div class="player-recommend-vbox">
+							<img src="<%=data.screenshot%>" class="player-recommend-video" alt="">
+							<div class="player-recommend-mask">
+								<i></i><span></span>
+							</div>
+						</div>
+						<img src="<%=data.avatar%>" class="player-recommend-head" alt="">
+						<p class="player-recommend-name">
+							<%=data.nick%>
+						</p>
+						<p class="player-recommend-viewers">
+							<i></i>
+							<span style='float: left;'><%=data.totalCount%>个观众</span>
+							<span style="float: right;"><%=data.gameName%></span>
+						</p>
+					</li>
+				<%	}%>
+			</ul>
+		</div>
+		<p class="player-recommend-all">
+			全部直播 >>
+		</p>
+	</div>
+</div>

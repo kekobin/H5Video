@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+ 	<meta http-equiv="Content-Language" content="zh-CN" />
+	<title>虎牙H5播放器</title>
+	<!--HEAD_END-->
+	<link rel="stylesheet" href="css/index.scss">
+	<script type="text/javascript" src="lib/jquery-1.6.1.min.js" data-fixed="true"></script>
+</head>
+<body>
+
+<div id="videoContainer" calss='videoContainer'></div>
+<script type="text/javascript" src="taf/vplayer_taf.js"></script>
+<script type="text/javascript" src="js/vplayer.js"></script>
+
+<script type="text/javascript">
+
+//45418615
+//71862053/2514367100
+var vplayer = new VPlayer({
+	idDom : '#videoContainer',
+	chTopId : 95431869,
+	subChId : 2516077608,
+	vappid : 10060,
+	register : function(obj){
+		// obj.on("webgamelivelogin", loginTest);
+	}
+});
+
+// channelOff('s'); //关闭推送信息打印
+// channelOnly('t'); //屏蔽其它信息，只查看从启动到播放视频的时间
+
+</script>
+
+<!--SCRIPT_PLACEHOLDER-->
+<!--RESOURCEMAP_PLACEHOLDER-->
+<!--BODY_END-->
+</body>
+</html>

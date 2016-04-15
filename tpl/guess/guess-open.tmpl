@@ -1,0 +1,104 @@
+<div class="guess-open">
+    <div class="guess-open-title">
+        <span class="guess-open-word">我要开猜</span>
+    </div>
+    <span class="guess-open-close"></span>
+    
+    <div class="guess-open-line">
+        <span>你的开猜可以被其它观众购买</span>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">竞猜主题：</span>
+        <span id="guess-open-content" class="guess-open-white">我人头单数</span>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">押胜方：</span>
+        <div class="guess-open-radio">
+            <input name="resultRadio" type="radio"></input><span>单</span>
+        </div>
+        <div class="guess-open-radio">
+            <input name="resultRadio" type="radio"></input><span>双</span>
+        </div>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">比率：</span>
+        <span class="guess-open-white">1：</span>
+        <input draggable="false" type="text" maxlength="3" class="guess-open-input"></input>
+        <span>比率范围0.1至9.9</span>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">类型：</span>
+        <div class="guess-open-radio">
+            <input name="beanRadio" type="radio"></input><span>银豆<i class="guess-com-bean-silver1"></i></span>
+        </div>
+        <div class="guess-open-radio">
+            <input name="beanRadio" type="radio"></input><span class="guess-open-gold">金豆<i class="guess-com-bean-gold1"></i></span>
+        </div>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">我的账户：</span>
+        <i id="guess-open-bean-own"></i>
+        <span class="guess-open-bean"></span>
+        <span class="guess-open-charge">充值</span>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-pre">底金：</span>
+        <input type="text" maxLength="7" class="guess-open-input"></input>
+        <span>底金不少于10000</span>
+    </div>
+    
+    <div class="guess-open-line">
+        <span class="guess-open-confirm">确定</span>
+    </div>
+    
+    <div class="guess-open-fast-input">
+        <%
+        function createKeyboard(rows)
+        {
+            for(var i = 0;i < rows.length;i ++)
+            {
+        %>
+                <div>
+                <%
+                var columns = rows[i];
+                for(var j = 0;j < columns.length;j ++)
+                {
+                %>
+                    <span class="guess-open-fast-btn"><%=columns[j]%></span>
+                <%
+                }
+                %>
+                </div>
+            <%
+            }
+        }
+        %>
+        <div class="guess-open-fast-l">
+            <span class="guess-open-fast-t">快捷输入底金：</span>
+            <div class="guess-open-fast-keyboard">
+                <%
+                var lArr = [["1万","5万","10万"],["20万","40万","80万"],["100万"]];
+                createKeyboard(lArr);
+                %>
+                <span class="guess-open-fast-ctrl">展开</span>
+            </div>
+        </div>
+        <div class="guess-open-fast-r">
+            <span class="guess-open-fast-t">全屏请使用软键盘输入</span>
+            <div class="guess-open-fast-keyboard">
+                <%
+                var rArr = [["1","2","3"],["4","5","6"],["7","8","9"],["万","0","退格"]];
+                createKeyboard(rArr);
+                %>
+            </div>
+        </div>
+        
+        <span class="guess-open-fast-close">关闭</span>
+    </div>
+</div>

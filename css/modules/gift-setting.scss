@@ -1,0 +1,58 @@
+#player-panel-gift-setting {
+    width: 350px;
+    height: 290px;
+    .player-panel-content {
+        overflow: hidden;
+        height: 250px;
+        margin: 0 20px;
+        color: #9D9D9D;
+        font-size: 14px;
+        font-family: SimSun;
+        li {
+            width: 300px;
+            height: 17px;
+            margin-top: 15px;
+            cursor: pointer;
+            padding-left: 25px;
+        }
+        span {
+            position: absolute;
+            left: 20px;
+            width: 16px;
+            height: 17px;
+            display: block;
+            background: url(../../img/check1.jpg?__sprite) no-repeat;
+        }
+        i {
+            position: absolute;
+            left: 20px;
+            width: 16px;
+            height: 17px;
+            display: block;
+            /*i 、li 、a等标签添加背景时需要设置宽高以及display:block，或者内含非空白文本*/
+            background: url(../../img/check2.jpg?__sprite) no-repeat;
+        }
+        p {
+            position: relative;
+            top: 15px;
+            color: #666;
+        }
+        button {
+            position: absolute;
+            left: 130px;
+            top: 240px;
+            width: 82px;
+            height: 32px;
+            cursor: pointer;
+            color: #fff;
+            background: #6F87A9;
+            border: 1px solid #6F87A9;
+            border-radius: 3px;
+            outline: none;
+            &:hover {
+                background: #159AE5;
+                border: 1px solid #159AE5;
+            }
+        }
+    }
+}

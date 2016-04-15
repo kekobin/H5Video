@@ -1,0 +1,70 @@
+<div class="player-face-pre"></div>
+<div class="player-face-list">
+	<ul>
+		<%
+			var len = propsList.length;
+			for (var i = 0; i < len; i++) {
+				var item = propsList[i];
+				var icon = getIconUrl(item);
+		%>
+		<li class="player-face-gift" propsId="<%=item.iPropsId%>">
+			<img src="<%=icon%>">
+			<span class="player-bot-line"></span>
+		</li>
+		<%	}%>
+	</ul>
+</div>
+<div class="player-face-next"></div>
+
+<div class="player-face-layer">
+	<span title="关闭" class="player-face-close"></span>
+	<h3>送给主播</h3>
+	<div class="player-face-give">
+		<span class="player-face-give-img"><img src=""></span>
+		<input type="text" class="player-face-give-input">
+		<span class="player-face-give-btn">赠送</span>
+	</div>
+	<ul class="player-face-sel">
+		<li>
+			<strong>123</strong>
+			<p>十全十美</p>
+		</li>
+		<li>
+			<strong>123</strong>
+			<p>想你</p>
+		</li>
+		<li>
+			<strong>123</strong>
+			<p>一切顺利</p>
+		</li>
+		<li>
+			<strong>123</strong>
+			<p>要抱抱</p>
+		</li>
+		<li>
+			<strong>123</strong>
+			<p>我爱你</p>
+		</li>
+		<li>
+			<strong>123</strong>
+			<p>一生一世</p>
+		</li>
+	</ul>
+	<div class="player-face-foot">
+		消耗：<i></i><span>10,000</span>
+	</div>
+	<span class="player-face-set" title="设置"></span>	
+</div>
+
+<div class="player-face-tip">
+	<div class="player-face-tip-img">
+		<img src="">
+	</div>
+	<div class="player-face-tip-txt">
+		<h3>{0}<span>({1}Y币/{2}金豆{3})</span></h3>
+		<div class="player-face-tip-gap">
+			<p>没时间解释了，快上车</p>
+		</div>
+		<p>一次赠送<span>{0}个</span>触发{1}</p>
+	</div>
+</div>

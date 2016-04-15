@@ -1,0 +1,74 @@
+<div class="guess-main">
+    <div class="guess-main-current">
+        <div class="guess-main-title">
+            <span class="game-main-title-pre">猜(1/3)</span>
+            <span class="game-main-title-name">我是MVP吗</span>
+        </div>
+        <div class="guess-main-arrow">
+            <i class="guess-main-arrow-l" title="上一个竞猜"></i>
+            <i class="guess-main-arrow-r" title="下一个竞猜"></i>
+        </div>
+        
+        <div class="guess-main-box">
+            <div class="guess-main-type">
+                <p>我是</p>
+                <p>我不是</p>
+            </div>
+            <%
+            for(var i = 0;i < 2;i ++)
+            {
+            %>
+                <div class="guess-main-frame">
+                    <div class="guess-main-frame-title">
+                        <div class="guess-type">
+                            <i id="guess-main-bean-icon"></i>
+                            <span id="guess-main-bean-txt"></span>
+                        </div>
+                        <span class="guess-main-start">开猜</span>
+                    </div>
+                
+                    <div class="guess-main-list">
+                        <%
+                        var listItemArr = ["guess-main-process-red","guess-main-process-blue"];
+                        for(var j = 0;j < 2;j ++)
+                        {
+                        %>
+                            <div class="guess-main-li">
+                                <div class="guess-main-process">
+                                    <i class="<%=listItemArr[j]%>"></i>
+                                    <span></span>
+                                </div>
+                                <span class="guess-main-rate"></span>
+                                <span class="guess-main-plan">种豆</span>
+                            </div>
+                        <%
+                        }
+                        %>
+                    </div>
+                </div>
+            <%
+            }
+            %>
+        </div>
+    </div>
+    
+    <span class="guess-main-close"></span>
+    <div class="guess-main-other">
+        <ul>
+            <li title="我参与的竞猜">
+                <i class="guess-main-mine"></i><span>我的</span>
+            </li>
+            <li title="帮助提示">
+                <i class="guess-main-help"></i><span>帮助</span>
+            </li>
+        </ul>
+    </div>
+    <div class="guess-main-result">
+        <span>竞猜结果</span>
+        <ul>
+            <li>结果1</li>
+            <li>结果2</li>
+            <li>结果3</li>
+        </ul>
+    </div>
+</div>

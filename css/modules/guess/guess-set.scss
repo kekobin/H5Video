@@ -1,0 +1,83 @@
+//竞猜设置
+.guess-set{
+    @extend .guess-panel;
+    width: 390px;
+    height: 470px;
+    .guess-set-title{
+        @extend .guess-panel-title;
+        height: 40px;
+    }
+    .guess-set-word{
+        @extend .guess-panel-word;
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+    }
+    .guess-set-word1{
+        position: relative;
+        margin-left: 12px;
+        font-size: 12px;
+        height: 33px;
+        line-height: 33px;
+        color: #0066CC;
+    }
+    
+    .guess-set-list{
+        .guess-set-item{
+            height: 124px;
+            border-bottom: 1px solid #666;
+            input[type=text]{
+                @extend .guess-com-input;
+                height: 26px;
+            }
+            .guess-set-item-line{
+                position: relative;
+                height: 26px;
+                top: 10px;
+                padding-top: 10px;
+                &:first-child{
+                    padding-top: 0;
+                }
+                span{
+                    line-height: 26px;
+                }
+            }
+            
+            .guess-set-item-title{
+                @extend .guess-set-item-line;
+                input{
+                    width: 206px;
+                }
+            }
+            .guess-set-item-result{
+                @extend .guess-set-item-line;
+                input{
+                    width: 90px;
+                }
+                span{
+                    color: #999999;
+                }
+            }
+            .guess-set-item-type{
+                @extend .guess-set-item-line;
+            }
+        }
+    }
+    .guess-set-bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        .guess-set-confirm{
+            @extend .guess-com-btn-blue;
+            top: 12px;
+            left: 94px;
+        }
+        .guess-set-cancel{
+            @extend .guess-com-btn-blue;
+            top: 12px;
+            left: 204px;
+        }
+    }
+}

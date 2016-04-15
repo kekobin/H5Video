@@ -1,0 +1,268 @@
+/**
+ * 宝箱
+ */
+
+#player-box {
+    display: none;
+    position: absolute;
+    z-index: 999999;
+    width: 555px;
+    height: 316px;
+    background: url(../../img/output/boxbg.png) no-repeat -15px -15px;
+    .player-box-title {
+        position: relative;
+        top: 70px;
+        left: 15px;
+        height: 60px;
+        width: 555px;
+        cursor: pointer;
+        span {
+            float: right;
+            top: -5px;
+            right: 25px;
+            width: 35px;
+            height: 35px;
+            position: relative;
+            cursor: pointer;
+            background: url(../../img/box/btnClose1.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/box/btnClose2.png?__sprite) no-repeat;
+            }
+        }
+    }
+    .player-box-list {
+        position: relative;
+        left: 20px;
+        top: 110px;
+        height: 122px;
+        ul {
+            height: 100%;
+            li {
+                position: relative;
+                float: left;
+                margin-left: 5px;
+                width: 80px;
+                height: 86px;
+                display: block;
+                background: url(../../img/box/cellbg.png?__sprite);
+                i {
+                    display: block;
+                    /***四行万能居中公式***/
+                    /*父容器必须为relative*/
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                p {
+                    visibility: hidden;
+                    width: 80px;
+                    height: 28px;
+                    top: 90px;
+                    display: block;
+                    position: absolute;
+                }
+                .player-box-stat1 {
+                    background: url(../../img/box/wait.png?__sprite) no-repeat;
+                }
+                .player-box-stat2 {
+                    background: url(../../img/box/cdbg.png?__sprite) no-repeat;
+                }
+                .player-box-stat3 {
+                    cursor: pointer;
+                    background: url(../../img/box/btnGet1.png?__sprite) no-repeat;
+                    &:hover {
+                        background: url(../../img/box/btnGet2.png?__sprite) no-repeat;
+                    }
+                }
+                .player-box-stat4 {
+                    font-size: 16px;
+                    line-height: 28px;
+                    text-align: center;
+                    color: #FA6A11;
+                }
+            }
+        }
+    }
+}
+
+.player-box-icon-close {
+    position: absolute;
+    width: 55px;
+    height: 46px;
+    background: url(../../img/box/boxclose.png?__sprite) no-repeat;
+}
+
+.player-box-icon-open {
+    width: 70px;
+    height: 56px;
+    background: url(../../img/box/boxopen.png?__sprite) no-repeat;
+}
+
+.player-box-icon-0 {
+    width: 62px;
+    height: 62px;
+    background: url(../../img/box/icon0.png?__sprite) no-repeat;
+}
+
+.player-box-icon-2 {
+    width: 55px;
+    height: 55px;
+    background: url(../../img/box/icon2.png?__sprite) no-repeat;
+}
+
+.player-box-icon-4 {
+    width: 53px;
+    height: 54px;
+    background: url(../../img/box/icon4.png?__sprite) no-repeat;
+}
+
+.player-box-icon-8 {
+    width: 37px;
+    height: 31px;
+    background: url(../../img/box/icon8.png?__sprite) no-repeat;
+}
+
+.player-box-icon-20035 {
+    width: 38px;
+    height: 38px;
+    background: url(../../img/box/icon20035.png?__sprite) no-repeat;
+}
+
+
+/**
+ * 百宝箱按钮
+ */
+
+.player-chest {
+    width: 70px;
+    height: 60px;
+    float: left;
+    background: url(../../img/player-gift-line.png?__inline) no-repeat top right;
+    .player-chest-bg {
+        position: relative;
+        left: 0;
+        width: 54px;
+        height: 45px;
+        margin: 7px 7px;
+        background: url(../../img/box/boxcd.png?__sprite) no-repeat;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            animation: animate-chest 0.1s;
+        }
+        .player-chest-cd {
+            display: none;
+            position: relative;
+            top: 35px;
+            width: 40px;
+            height: 12px;
+            margin: 0 auto;
+            line-height: 12px;
+            opacity: 0.7;
+            background: black;
+            border-radius: 5px;
+        }
+        .chest-award-count {
+            display: none;
+            position: absolute;
+            left: 45px;
+            top: -5px;
+            line-height: 15px;
+            @include circle(15px, #C50F0F);
+        }
+    }
+    .player-chest-tip {
+        display: none;
+        position: absolute;
+        width: 343px;
+        height: 170px;
+        top: -170px;
+        background: url(../../img/output/boxtipbg.png) no-repeat;
+        i {
+            display: none;
+            position: relative;
+            left: 100px;
+            top: 60px;
+        }
+        .chest-stat-2 {
+            width: 178px;
+            height: 50px;
+            background: url(../../img/box/tip2.png?__sprite) no-repeat;
+        }
+        .chest-stat-3 {
+            width: 218px;
+            height: 51px;
+            background: url(../../img/box/tip3.png?__sprite) no-repeat;
+        }
+        span {
+            position: absolute;
+            display: block;
+            top: 62px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 22px;
+            color: #FF620E;
+        }
+        .chest-tip-words-2 {
+            left: 120px;
+            width: 130px;
+        }
+        .chest-tip-words-3 {
+            left: 143px;
+            width: 25px;
+        }
+    }
+    .player-chest-login {
+        display: none;
+        position: absolute;
+        width: 347px;
+        height: 189px;
+        top: -180px;
+        background: url(../../img/output/boxlogin.png) no-repeat;
+        i {
+            display: block;
+            position: relative;
+            top: 54px;
+            left: 284px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            background: url(../../img/box/btnBoxClose1.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/box/btnBoxClose2.png?__sprite) no-repeat;
+            }
+        }
+        span {
+            display: block;
+            position: relative;
+            top: 96px;
+            left: 104px;
+            width: 83px;
+            height: 34px;
+            cursor: pointer;
+            background: url(../../img/box/btnLogin1.png?__sprite) no-repeat;
+            &:hover {
+                background: url(../../img/box/btnLogin2.png?__sprite) no-repeat;
+            }
+            &:active {
+                background: url(../../img/box/btnLogin3.png?__sprite) no-repeat;
+            }
+        }
+    }
+}
+
+@keyframes animate-chest {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: -3px;
+    }
+    75% {
+        left: 3px;
+    }
+    100% {
+        left: 0;
+    }
+}

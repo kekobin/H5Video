@@ -1,0 +1,42 @@
+<div class="guess-set">
+    <div class="guess-set-title">
+        <span class="guess-set-word">竞猜设置</span>
+        <span class="guess-set-word1">填写说明</span>
+    </div>
+    
+    <div class="guess-set-list">
+        <%
+        for(var i = 0;i < 3;i ++)
+        {
+        %>
+            <div class="guess-set-item">
+                <div class="guess-set-item-title">
+                    <span class="guess-com-word-pre">主题一：</span>
+                    <input maxlength="10" type="text"></input>
+                    <span>字数10个</span>
+                </div>
+                <div class="guess-set-item-result">
+                    <span class="guess-com-word-pre">胜利条件：</span>
+                    <input type="text"></input>
+                    <span>vs</span>
+                    <input type="text"></input>
+                </div>
+                <div class="guess-set-item-type">
+                    <span class="guess-com-word-pre">竞猜类型：</span>
+                    <div class="guess-com-radio">
+                        <input name="typeRadio<%i%>" type="radio"></input><span>银豆</span>
+                    </div>
+                    <div class="guess-com-radio">
+                        <input name="typeRadio<%i%>" type="radio"></input><span>金豆</span>
+                    </div>
+                </div>
+            </div>
+        <%
+        }
+        %>
+    </div>
+    <div class="guess-set-bottom">
+        <span class="guess-set-confirm">确定</span>
+        <span class="guess-set-cancel">取消</span>
+    </div>
+</div>
